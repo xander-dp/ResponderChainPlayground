@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="gr_test" customModuleProvider="target">
+            <connections>
+                <outlet property="gestureRecognizer" destination="hHr-Ga-A6m" id="xAv-5w-Ewb"/>
+                <outlet property="view" destination="oys-O1-Iid" id="bMY-5n-8L5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <gestureRecognizer id="hHr-Ga-A6m" customClass="CustomGestureRecognizer" customModule="gr_test" customModuleProvider="target"/>
+        <view contentMode="scaleToFill" id="oys-O1-Iid">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zhx-Rq-XC7" customClass="UIViewWrapper" customModule="gr_test" customModuleProvider="target">
+                    <rect key="frame" x="46.666666666666657" y="276" width="300" height="300"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwE-VD-8RJ" customClass="UIViewWithRecognizer" customModule="gr_test" customModuleProvider="target">
+                            <rect key="frame" x="50" y="50" width="200" height="200"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbq-jW-5bT" customClass="UIViewSubview" customModule="gr_test" customModuleProvider="target">
+                                    <rect key="frame" x="33.333333333333329" y="33.333333333333314" width="133.33333333333337" height="133.33333333333334"/>
+                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemMintColor"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstItem="tbq-jW-5bT" firstAttribute="centerX" secondItem="ZwE-VD-8RJ" secondAttribute="centerX" id="5k8-lZ-ivS"/>
+                                <constraint firstItem="tbq-jW-5bT" firstAttribute="height" secondItem="ZwE-VD-8RJ" secondAttribute="height" multiplier="1:1.5" id="8vl-I8-P6z"/>
+                                <constraint firstItem="tbq-jW-5bT" firstAttribute="width" secondItem="ZwE-VD-8RJ" secondAttribute="width" multiplier="1:1.5" id="9Uh-XN-gZQ"/>
+                                <constraint firstItem="tbq-jW-5bT" firstAttribute="centerY" secondItem="ZwE-VD-8RJ" secondAttribute="centerY" id="Z9a-Q0-xNf"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="hHr-Ga-A6m" appends="YES" id="w8u-Gm-5dk"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="0yx-1Z-g5p"/>
+                        <constraint firstItem="ZwE-VD-8RJ" firstAttribute="height" secondItem="Zhx-Rq-XC7" secondAttribute="height" multiplier="1:1.5" id="HOE-vx-cVl"/>
+                        <constraint firstItem="ZwE-VD-8RJ" firstAttribute="width" secondItem="Zhx-Rq-XC7" secondAttribute="width" multiplier="1:1.5" id="HWW-1P-gU8"/>
+                        <constraint firstAttribute="width" constant="300" id="L21-Gb-2ad"/>
+                        <constraint firstItem="ZwE-VD-8RJ" firstAttribute="centerX" secondItem="Zhx-Rq-XC7" secondAttribute="centerX" id="XOY-hI-mAJ"/>
+                        <constraint firstItem="ZwE-VD-8RJ" firstAttribute="centerY" secondItem="Zhx-Rq-XC7" secondAttribute="centerY" id="Z95-xo-HQu"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="pW1-ei-hjQ"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Zhx-Rq-XC7" firstAttribute="centerX" secondItem="oys-O1-Iid" secondAttribute="centerX" id="TSl-Wt-TjF"/>
+                <constraint firstItem="Zhx-Rq-XC7" firstAttribute="centerY" secondItem="oys-O1-Iid" secondAttribute="centerY" id="d2M-uc-RSf"/>
+            </constraints>
+            <point key="canvasLocation" x="-219" y="15"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
