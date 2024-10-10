@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 
 class CustomApplication: UIApplication {
+    
+    override func sendEvent(_ event: UIEvent) {
+        //MARK: UIEvent entry point. Next will be CustomWindow.sendEvent()
+        super.sendEvent(event)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         print("Touches BEGAN on \(CustomApplication.self)")
@@ -27,9 +33,5 @@ class CustomApplication: UIApplication {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
         print("Touches CANCELED on \(CustomApplication.self)")
-    }
-    
-    override func sendEvent(_ event: UIEvent) {
-        super.sendEvent(event)
     }
 }

@@ -29,6 +29,8 @@ class CustomGestureRecognizer: UIPinchGestureRecognizer {
     }
     
     override func shouldReceive(_ event: UIEvent) -> Bool {
+        //MARK: Check Callstack. After collection, suitable GRs going to be notified about upcomming Event
+        
         super.shouldReceive(event)
     }
     

@@ -11,6 +11,16 @@ import UIKit
 ///Just a regular UIView.
 ///Use to check Responder Chain without GR
 class UIViewWrapper: UIView {
+   
+    override var gestureRecognizers: [UIGestureRecognizer]? {
+        get {
+            return super.gestureRecognizers
+        }
+        set {
+            super.gestureRecognizers = newValue
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         print("Touches BEGAN on \(UIViewWrapper.self)")
@@ -29,14 +39,5 @@ class UIViewWrapper: UIView {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
         print("Touches CANCELED on \(UIViewWrapper.self)")
-    }
-    
-    override var gestureRecognizers: [UIGestureRecognizer]? {
-        get {
-            return super.gestureRecognizers
-        }
-        set {
-            super.gestureRecognizers = newValue
-        }
     }
 }

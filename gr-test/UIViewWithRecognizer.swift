@@ -12,30 +12,20 @@ import UIKit
 ///in order to see how GR influencing UITouch dispatching
 class UIViewWithRecognizer: UIView {
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        print("Touches BEGAN on \(UIViewWithRecognizer.self)")
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        super.hitTest(point, with: event)
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        print("Touches MOVED on \(UIViewWithRecognizer.self)")
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        print("Touches ENDED on \(UIViewWithRecognizer.self)")
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-        print("Touches CANCELED on \(UIViewWithRecognizer.self)")
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        super.point(inside: point, with: event)
     }
     
     //setting gesture recognizer from storyboard, in case with storyboard
     //addGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) NOT getting called
     override var gestureRecognizers: [UIGestureRecognizer]? {
         get {
+            //MARK: Check Callstack after touch. UIKit collects all GRs in Responder Chain.
+            
             //Getting called after user touches,
             //to determine if View has any Gesture Recognizer
             return super.gestureRecognizers
@@ -56,5 +46,25 @@ class UIViewWithRecognizer: UIView {
                 }
             }
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        print("Touches BEGAN on \(UIViewWithRecognizer.self)")
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        print("Touches MOVED on \(UIViewWithRecognizer.self)")
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        print("Touches ENDED on \(UIViewWithRecognizer.self)")
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        print("Touches CANCELED on \(UIViewWithRecognizer.self)")
     }
 }

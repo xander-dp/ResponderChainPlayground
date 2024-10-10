@@ -18,26 +18,6 @@ class CustomWindow: UIWindow {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        print("Touches BEGAN on \(CustomWindow.self)")
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        print("Touches MOVED on \(CustomWindow.self)")
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        print("Touches ENDED on \(CustomWindow.self)")
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-        print("Touches CANCELED on \(CustomWindow.self)")
-    }
-    
     override func sendEvent(_ event: UIEvent) {
         
         //Here we can get all Gesture Recognizers related to our Touch
@@ -61,6 +41,27 @@ class CustomWindow: UIWindow {
             print("New Touch detected for \(type(of: gr)): \n\(touchDesciption)")
         }
         
+        //MARK: Window will dispatch Touch to Gesture Recognizer. Check Callstack in touchesBegan(touches: with:)
         super.sendEvent(event)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        print("Touches BEGAN on \(CustomWindow.self)")
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        print("Touches MOVED on \(CustomWindow.self)")
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        print("Touches ENDED on \(CustomWindow.self)")
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        print("Touches CANCELED on \(CustomWindow.self)")
     }
 }
