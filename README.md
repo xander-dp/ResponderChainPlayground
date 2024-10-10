@@ -22,7 +22,8 @@ before dispatch an event to our `CustomApplication` class.
 This property is overwritten in `UIViewWithGestureRecognizer` (you can also overwrite this property for each class related to UIView
 in the project to check the sequence). If you will hit the Breakpoint in getter and discover the Call Stack,
 you will see that the system collecting all Gesture Recognizers presented in *Responder Chain*:
-             <img width="536" alt="image" src="https://github.com/user-attachments/assets/04e25b33-af01-4577-ba32-b62dbb6cf7a1">
+
+           <img width="536" alt="image" src="https://github.com/user-attachments/assets/04e25b33-af01-4577-ba32-b62dbb6cf7a1">
 
 4. As a final pache of puzzle, add a Breakpoints to func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) of CustomGestureRecognizer
 and UIViewWrapper. Try to interract with different Views and compare the Call Stack, you'll see that it differs from UIWindow.sendEvent.
@@ -34,5 +35,6 @@ events, evaluation of several GRs simultaneous processing on the same `UIEvent`,
 and many more. Thats why I invite you to collaborate and extend this project to explore other specifics of Handling the User's Interaction.
 
 P.P.S I've also added some //MARK: tags with short description for easier navigation through the code.
+
             <img width="351" alt="image" src="https://github.com/user-attachments/assets/b88db32c-ab62-4cb8-9286-d07961779119">
 
